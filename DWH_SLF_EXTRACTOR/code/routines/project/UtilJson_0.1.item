@@ -1,0 +1,36 @@
+package routines;
+
+import routines.system.JSONException;
+import routines.system.JSONObject;
+
+
+public class UtilJson {
+
+	/**
+	   * Retrive value keyString from path Json :{}\value
+	   * 
+	   **/ 
+	  public static String getValueStringFrom_Object_1Level(String jsonBody,String keyString){
+		  
+		  if (jsonBody==null || keyString==null)
+			  return null;
+		  
+		  JSONObject jsonObjBody = new JSONObject(jsonBody);
+		  
+		  try{
+		  	  Object returnValue = jsonObjBody.get(keyString);
+		  	  
+		  	  if (returnValue instanceof String)
+		  		  return (String)returnValue;
+		  	  else if (returnValue instanceof Integer)
+		  		return ((Integer)returnValue).toString();
+		  	else if (returnValue instanceof Boolean)
+		  		return ((Boolean)returnValue).toString();
+		  	  else
+		  		return null;
+		  }
+		  catch (JSONException e){
+			  return null;
+		  }
+	  }
+}

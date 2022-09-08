@@ -1,0 +1,173 @@
+package routines;
+
+import java.util.Arrays;
+
+
+public class Enums {
+
+    public enum Sede{
+    	
+    	COSIO("Cosio",1),
+    	PIAGNO("Piagno",2),
+    	VALMADRERA("Valmadrera",3),
+    	CURNO("Curno",4),
+    	TAVERNERIO("Tavernerio",5),
+    	MODENAMB("ModenaMB",6),
+    	CARPI("Carpi",7),
+    	CASTIONE("Castione",8),
+    	OLGINATE("Olginate",9),
+    	MODENAHY("ModenaHY",10),
+    	CREMONA("Cremona",11),
+    	PARMA("Parma",12),
+    	BUSTOJEEP("BustoJeep",13),
+    	BUSTOTOY("BustoTOY",14),
+    	CASTELLANZA("Castellanza",15),
+    	CAVAMANARA("CavaManara",16),
+    	CORBETTA("Corbetta",17),
+    	CORSICOBMW("CorsicoBMW",18),
+    	CORSICO("Corsico",19),
+    	CREMA("Crema",20),
+    	GATTICO("Gattico",21),
+    	INDUNO("Induno",22),
+    	LEGNANO("Legnano",23),
+    	MAGNAGO("Magnago",24),
+    	MILANOBMW("MilanoBMW",25),
+    	MILANOTOY("MilanoTOY",26),
+    	NOVARA("Novara",27),
+    	OLGIATE("Olgiate",28),
+    	SICCOMARIO("Siccomario",29),
+    	SARONNO("Saronno",30),
+    	TREZZANO("Trezzano",31),
+    	VARESE("Varese",32),
+    	VERBANIA("Verbania",33),
+    	VERCELLI("Vercelli",34),
+    	VIGEVANOBMW("VigevanoBMW",35),
+    	VIGEVANOTOY("VigevanoTOY",36),
+    	VOGHERA("Voghera",37),
+    	BUSTOLEX("BustoLEX",38),
+    	LUISAGO("Luisago",39),
+    	MESERO("Mesero",40),
+    	COMO("Como",41),
+    	VARESE_BMW_COMM("Varese BMW Comm",42),
+    	VARESE_BMW_OFF("Varese BMW Off",43),
+    	// MILANO Ortles LEX ??
+    	BERGAMO("Bergamo",45),
+    	TAVAGNACCO_MB("Tavagnacco MB",46),
+    	TAVAGNACCO_BMW("Tavagnacco BMW",47),
+    	PORTOGRUARO_MB("Portogruaro MB",48),
+    	TRIESTE_BMW("Trieste BMW",49),
+    	MUGGIA_MB("Muggia MB",50),
+    	PORDENONE_MB("Pordenone MB",51),
+    	PORDENONE_BMW("Pordenone BMW",52),
+    	ZOPPOLA("Zoppola",53),
+    	SUSEGANA_BMW("Susegana BMW",54),
+    	VILLORBA_BMW("Villorba BMW",55),
+    	BELLUNO_BMW("Belluno BMW",56),
+    	REGGIO_EMILIA_MB("Reggio Emilia MB",57),
+    	PARMA_MB("Parma MB",58),
+    	PARMA_MB_VAN("Parma MB VAN",59),
+    	NOT_FOUND("NotFound",0);
+    	
+    	
+    	private String sede;
+    	private int idSede;
+    	
+    	public String getSede() {
+            return this.sede;
+        }
+    	
+    	public int getIdSede() {
+            return this.idSede;
+        }
+    	
+    	Sede(String sede,int idSede) {
+            this.sede = sede;
+            this.idSede = idSede;
+        }
+    	
+    	public static final Sede getBySede(String sedeInput){
+    	    return Arrays.stream(Sede.values()).filter(sede -> sede.sede.equals(sedeInput)).findFirst().orElse(NOT_FOUND);
+    	}
+    }
+    
+ public enum Mese{
+    	
+    	GEN("GEN","01"),
+    	FEB("FEB","02"),
+    	MAR("MAR","03"),
+    	APR("APR","04"),
+    	MAG("MAG","05"),
+    	GIU("GIU","06"),
+    	LUG("LUG","07"),
+    	AGO("AGO","08"),
+    	SET("SET","09"),
+    	OTT("OTT","10"),
+    	NOV("NOV","11"),
+    	DIC("DIC","12");
+    	
+    	
+    	private String mese;
+    	private String meseNumber;
+    	
+    	public String getMese() {
+            return this.mese;
+        }
+    	
+    	public String getMeseNumber() {
+            return this.meseNumber;
+        }
+    	
+    	Mese(String mese,String meseNumber) {
+            this.mese = mese;
+            this.meseNumber = meseNumber;
+        }
+    	
+    	public static final Mese getByMese(String meseInput){
+    	    return Arrays.stream(Mese.values()).filter(mese -> mese.mese.equals(meseInput)).findFirst().orElse(null);
+    	}
+    }
+ 
+    public enum Marchio{
+ 	
+ 	TOYOTA("Toyota",10),
+ 	LEXUS("Lexus",11),
+ 	BMW_AUTO("BMW Auto",31), // Presente anche con codice 301
+ 	BMW_MINI("BMW Mini",32), // Presente anche con codice 302
+ 	BMW_MOTO("BMW Moto",30), // Presente anche con codice 300
+ 	MERCEDES("Mercedes",80),
+ 	SMART("Smart",79),
+ 	M_VAN("M VAN",77),
+ 	JEEP("Jeep",72),
+ 	KIA("Kia",97),
+ 	MITSUBISHI("Mitsubishi",96),
+ 	HYUNDAI("Hyundai",82),
+ 	SUBARU("Subaru",95),
+ 	ALFA_ROMEO("Alfa Romeo",67),
+ 	LANCIA("Lancia",66),
+ 	FIAT("Fiat",85),
+ 	ABARTH("Abarth",63),
+ 	FIAT_PROF("Fiat Prof",62),
+ 	REMKTG("Remktg",102);
+ 	
+ 	
+ 	private String marchio;
+ 	private Integer idMarchio;
+ 	
+ 	public String getMarchio() {
+         return this.marchio;
+     }
+ 	
+ 	public Integer getIdMarchio() {
+         return this.idMarchio;
+     }
+ 	
+ 	Marchio(String marchio,Integer idMarchio) {
+         this.marchio = marchio;
+         this.idMarchio = idMarchio;
+     }
+ 	
+ 	public static final Marchio getByDescMarchio(String marchioInput){
+ 	    return Arrays.stream(Marchio.values()).filter(marchio -> marchio.marchio.equals(marchioInput)).findFirst().orElse(null);
+ 	}
+ }
+}

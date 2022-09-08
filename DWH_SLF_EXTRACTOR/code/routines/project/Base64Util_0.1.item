@@ -1,0 +1,26 @@
+package routines;
+
+import org.apache.commons.codec.binary.Base64;
+
+
+
+public class Base64Util {
+
+
+    public static String getAuthorizationB64(String client,String secret) {
+       return new String(java.util.Base64.getEncoder().encode((client+":"+secret).getBytes()));
+    }
+    
+    public static String encodeBase64URLSafeString(byte[] in) {
+        return Base64.encodeBase64URLSafeString(in); 
+     }
+    
+    public static String encodeOrEmpty(String val) {
+    	
+    	if (UtilString.isEmptyTrim(val))
+    		return "";
+    	else
+            return new String(java.util.Base64.getEncoder().encode(val.getBytes()));
+     }
+    
+}
